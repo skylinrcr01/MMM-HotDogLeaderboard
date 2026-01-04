@@ -47,18 +47,3 @@
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-
-.hotdog-row.is-first .hotdog-name,
-.hotdog-row.is-first .hotdog-total {
-  color: #f6c000;
-}
-
-.hotdog-row.is-second .hotdog-name,
-.hotdog-row.is-second .hotdog-total {
-  color: #b9c7d6;
-}
-
-.hotdog-row.is-third .hotdog-name,
-.hotdog-row.is-third .hotdog-total {
-  color: #cd7f32;
-}
