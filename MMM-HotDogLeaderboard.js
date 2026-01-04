@@ -4,6 +4,7 @@ Module.register("MMM-HotDogLeaderboard", {
     updateInterval: 10 * 60 * 1000,
     maxEntries: 10,
     title: "Hot Dog Leaderboard",
+    totalLabel: "Glizzies Gobbled",
     showRank: true
   },
 
@@ -90,7 +91,7 @@ Module.register("MMM-HotDogLeaderboard", {
     headerRow.appendChild(nameHeader);
 
     const countHeader = document.createElement("th");
-    countHeader.textContent = "Glizzies Gobbled";
+    countHeader.textContent = this.config.totalLabel;
     headerRow.appendChild(countHeader);
 
     thead.appendChild(headerRow);
@@ -144,7 +145,7 @@ Module.register("MMM-HotDogLeaderboard", {
 
     const totalLabel = document.createElement("td");
     totalLabel.className = "hotdog-name hotdog-total-label";
-    totalLabel.textContent = "Glizzies Gobbled";
+    totalLabel.textContent = this.config.totalLabel;
     totalRow.appendChild(totalLabel);
 
     const totalValue = document.createElement("td");
