@@ -1,0 +1,64 @@
+.hotdog-leaderboard {
+  min-width: 260px;
+}
+
+.hotdog-title {
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.hotdog-loading,
+.hotdog-error {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.hotdog-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+.hotdog-table thead th {
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.6;
+  padding-bottom: 6px;
+}
+
+.hotdog-table tbody td {
+  padding: 3px 0;
+}
+
+.hotdog-rank {
+  width: 26px;
+  opacity: 0.7;
+}
+
+.hotdog-name {
+  padding-right: 12px;
+}
+
+.hotdog-total {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.hotdog-row.is-first .hotdog-name,
+.hotdog-row.is-first .hotdog-total {
+  color: #f6c000;
+}
+
+.hotdog-row.is-second .hotdog-name,
+.hotdog-row.is-second .hotdog-total {
+  color: #b9c7d6;
+}
+
+.hotdog-row.is-third .hotdog-name,
+.hotdog-row.is-third .hotdog-total {
+  color: #cd7f32;
+}
