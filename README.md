@@ -12,7 +12,7 @@ Copy this folder into `modules` in your MagicMirror² install, then add it to yo
   position: "top_right",
   config: {
     apiUrl: "https://example.com/api/leaderboard",
-    updateInterval: 10 * 60,
+    updateInterval: 1000 * 60,
     maxEntries: 10,
     title: "Hot Dog Leaderboard",
     showRank: true
