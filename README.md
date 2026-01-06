@@ -15,7 +15,7 @@ Copy this folder into `modules` in your MagicMirror² install, then add it to yo
     updateInterval: 1000 * 60,
     maxEntries: 10,
     title: "Hot Dog Leaderboard",
-    totalLabel: "Total Glizzies Gobbled",
+    totalLabel: "Glizzies Gobbled",
     showRank: true
   }
 }

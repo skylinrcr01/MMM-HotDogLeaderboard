@@ -94,7 +94,7 @@ Module.register("MMM-HotDogLeaderboard", {
 
     const countHeader = document.createElement("th");
     countHeader.className = "hotdog-total";
-    countHeader.textContent = this.config.totalLabel;
+    countHeader.textContent = "Glizzies Gobbled";
     headerRow.appendChild(countHeader);
 
     thead.appendChild(headerRow);
@@ -148,7 +148,7 @@ Module.register("MMM-HotDogLeaderboard", {
 
     const totalLabel = document.createElement("td");
     totalLabel.className = "hotdog-name hotdog-total-label";
-    totalLabel.textContent = this.config.totalLabel;
+    totalLabel.textContent = "Glizzies Gobbled";
     totalRow.appendChild(totalLabel);
 
     const totalValue = document.createElement("td");
