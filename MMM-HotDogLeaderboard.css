@@ -59,3 +59,9 @@
 .hotdog-total-row td {
   font-weight: 700;
 }
+
+.hotdog-row.is-first td,
+.hotdog-row.is-second td,
+.hotdog-row.is-third td {
+  font-weight: 700;
+}
