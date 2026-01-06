@@ -55,3 +55,7 @@
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
+
+.hotdog-total-row td {
+  font-weight: 700;
+}
