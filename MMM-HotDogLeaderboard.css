@@ -30,6 +30,10 @@
   padding-bottom: 6px;
 }
 
+.hotdog-table thead th.hotdog-total {
+  text-align: right;
+}
+
 .hotdog-table tbody td {
   padding: 3px 0;
 }

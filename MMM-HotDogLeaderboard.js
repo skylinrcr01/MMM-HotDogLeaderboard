@@ -82,15 +82,18 @@ Module.register("MMM-HotDogLeaderboard", {
 
     if (this.config.showRank) {
       const rankHeader = document.createElement("th");
+      rankHeader.className = "hotdog-rank";
       rankHeader.textContent = "#";
       headerRow.appendChild(rankHeader);
     }
 
     const nameHeader = document.createElement("th");
+    nameHeader.className = "hotdog-name";
     nameHeader.textContent = "Name";
     headerRow.appendChild(nameHeader);
 
     const countHeader = document.createElement("th");
+    countHeader.className = "hotdog-total";
     countHeader.textContent = this.config.totalLabel;
     headerRow.appendChild(countHeader);
 
