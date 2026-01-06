@@ -5,7 +5,9 @@ Module.register("MMM-HotDogLeaderboard", {
     maxEntries: 10,
     title: "Hot Dog Leaderboard",
     totalLabel: "Glizzies Gobbled",
-    showRank: true
+    showRank: true,
+    showPieChart: false,
+    pieChartSize: 140
   },
 
   start: function () {
@@ -160,6 +162,73 @@ Module.register("MMM-HotDogLeaderboard", {
 
     table.appendChild(tbody);
     wrapper.appendChild(table);
+
+    if (this.config.showPieChart) {
+      const chartEntries = visibleEntries
+        .map((entry) => ({
+          name: entry.username || "Unknown",
+          value: Number(entry.total_count) || 0
+        }))
+        .filter((entry) => entry.value > 0);
+
+      const chartWrapper = document.createElement("div");
+      chartWrapper.className = "hotdog-chart";
+
+      if (!chartEntries.length) {
+        const empty = document.createElement("div");
+        empty.className = "hotdog-chart-empty";
+        empty.textContent = "No chart data";
+        chartWrapper.appendChild(empty);
+      } else {
+        const canvas = document.createElement("canvas");
+        const size = Math.max(80, Number(this.config.pieChartSize) || 140);
+        canvas.width = size;
+        canvas.height = size;
+        canvas.className = "hotdog-chart-canvas";
+        chartWrapper.appendChild(canvas);
+
+        const legend = document.createElement("div");
+        legend.className = "hotdog-chart-legend";
+
+        const total = chartEntries.reduce((sum, entry) => sum + entry.value, 0);
+        const ctx = canvas.getContext("2d");
+        let startAngle = -Math.PI / 2;
+
+        chartEntries.forEach((entry, index) => {
+          const hue = Math.round((index / chartEntries.length) * 360);
+          const color = `hsl(${hue}, 70%, 55%)`;
+          const slice = (entry.value / total) * Math.PI * 2;
+
+          ctx.beginPath();
+          ctx.moveTo(size / 2, size / 2);
+          ctx.arc(size / 2, size / 2, size / 2, startAngle, startAngle + slice);
+          ctx.closePath();
+          ctx.fillStyle = color;
+          ctx.fill();
+
+          const legendItem = document.createElement("div");
+          legendItem.className = "hotdog-chart-item";
+
+          const swatch = document.createElement("span");
+          swatch.className = "hotdog-chart-swatch";
+          swatch.style.backgroundColor = color;
+          legendItem.appendChild(swatch);
+
+          const label = document.createElement("span");
+          label.className = "hotdog-chart-label";
+          label.textContent = entry.name;
+          legendItem.appendChild(label);
+
+          legend.appendChild(legendItem);
+
+          startAngle += slice;
+        });
+
+        chartWrapper.appendChild(legend);
+      }
+
+      wrapper.appendChild(chartWrapper);
+    }
 
     return wrapper;
   }

@@ -16,7 +16,9 @@ Copy this folder into `modules` in your MagicMirror² install, then add it to yo
     maxEntries: 10,
     title: "Hot Dog Leaderboard",
     totalLabel: "Glizzies Gobbled",
-    showRank: true
+    showRank: true,
+    showPieChart: false,
+    pieChartSize: 140
   }
 }
 ```
@@ -29,3 +31,5 @@ Copy this folder into `modules` in your MagicMirror² install, then add it to yo
 - `title` (string): Module title.
 - `totalLabel` (string): Label shown for the total row and column header.
 - `showRank` (boolean): Show ranking numbers.
+- `showPieChart` (boolean): Show a color-coded pie chart of consumption by user.
+- `pieChartSize` (number): Pie chart size in pixels.

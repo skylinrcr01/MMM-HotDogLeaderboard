@@ -65,3 +65,41 @@
 .hotdog-row.is-third td {
   font-weight: 700;
 }
+
+.hotdog-chart {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.hotdog-chart-canvas {
+  flex: 0 0 auto;
+  border-radius: 50%;
+}
+
+.hotdog-chart-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+.hotdog-chart-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hotdog-chart-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex: 0 0 auto;
+}
+
+.hotdog-chart-empty {
+  font-size: 12px;
+  opacity: 0.7;
+}
